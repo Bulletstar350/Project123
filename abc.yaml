@@ -1,0 +1,10 @@
+---
+  - name: Creating image from dockerfile
+    hosts: localhost
+    become: yes
+    tasks:
+      - name: build image from file
+        docker_image:
+          name: image:latest
+          path: https://github.com/AdiMattt/Project123/blob/master/Dockerfile
+          state: present
